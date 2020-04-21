@@ -1,0 +1,113 @@
+<html>
+  <head>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <style>
+      th{
+        height: 70px;
+        width: 50px;
+        text-align: center;
+      }
+      td { 
+        font-size: 25pt;
+        width: 300px;
+      }
+
+      
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+      <script type="text/babel">
+        class GuGuDan extends React.Component{
+          constructor(props){
+            super(props);
+            this.state={
+              first: parseInt(String(Math.ceil(Math.random()*9))+String(Math.ceil(Math.random()*9))),
+              second:parseInt(String(Math.ceil(Math.random()*9))+String(Math.ceil(Math.random()*9))),
+              third:parseInt(String(Math.ceil(Math.random()*9))+String(Math.ceil(Math.random()*9))),
+              f:parseInt(String(Math.ceil(Math.random()*9))+String(Math.ceil(Math.random()*9))),
+              
+              count:'',
+
+            };
+            
+          }
+          
+          onMinus= ()=>{
+            if(this.state.first>this.state.second){
+              return this.state.first+"-"+this.state.second+"="
+            };
+            if(this.state.first<this.state.second){
+              return this.state.second+"-"+this.state.first+"="
+            };
+            if(this.state.first===this.state.second){
+              return this.state.second+Math.ceil(Math.random()*8)+"-"+this.state.first+"="
+            };
+          }
+          onMinus2= ()=>{
+            if(this.state.third>this.state.f){
+              return this.state.third+"-"+this.state.f+"="
+            };
+            if(this.state.third<this.state.f){
+              return this.state.f+"-"+this.state.third+"="
+            };
+            if(this.state.third===this.state.f){
+              return this.state.f+Math.ceil(Math.random()*8)+"-"+this.state.third+"="
+            };
+          }
+          
+          render(){
+            return (
+            <React.Fragment>
+            
+            <table  className="fon">
+            
+            <tr>
+            <th>({parseInt(this.props.name)})</th>
+            <td>
+             
+             {this.onMinus()}
+            </td>
+            <th>({parseInt(this.props.name)+1})</th>
+            <td> 
+              
+              {this.onMinus2()}
+            </td>  
+            </tr>    
+            </table>
+            
+            </React.Fragment>
+            );
+          }
+        }
+      </script>
+      <script type="text/babel">
+        ReactDOM.render(
+        <div>
+        <div className="nam">
+        <h2>날짜:</h2><h2>학년:</h2> <h2>이름:</h2>
+        
+        
+        </div>
+       
+        <GuGuDan name="1"/>
+        <GuGuDan name="3"/>
+        <GuGuDan name="5"/>
+        <GuGuDan name="7"/>
+        <GuGuDan name="9"/>
+        <GuGuDan name="11"/>
+        <GuGuDan name="13"/>
+        <GuGuDan name="15"/>
+        <GuGuDan name="17"/>
+        <GuGuDan name="19"/>
+        
+        <h3></h3>
+
+
+        </div>,document.querySelector('#root'));
+      </script>
+    </div>
+   </body>
+</html>
