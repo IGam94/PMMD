@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <style>
+      th{
+        height: 70px;
+        width: 50px;
+        text-align: center;
+      }
+      td { 
+        font-size: 25pt;
+        width: 300px;
+      }
+      h4{
+        text-align: right;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+      <script type="text/babel">
+        class GuGuDan extends React.Component{
+          constructor(props){
+            super(props);
+            this.state={
+              first: String(Math.ceil(Math.random()*9))+String(Math.ceil(Math.random()*9)),
+              second: String(Math.ceil(Math.random()*9))+String(Math.ceil(Math.random()*9)),
+              third:String(Math.ceil(Math.random()*9))+String(Math.ceil(Math.random()*9)),
+              f:String(Math.ceil(Math.random()*9))+String(Math.ceil(Math.random()*9)),
+              
+              count:'',
+
+            };
+            
+          }
+          onSubmit = (e)=>{
+                e.preventDefault();
+                this.setState({
+                  first:Math.ceil(Math.random()*100),
+                  second:Math.ceil(Math.random()*100),
+                  count:'',
+                  value:'',
+                });
+          };
+          onChange = (e)=> {this.setState({value: e.target.value})};
+          
+          render(){
+            return (
+            <React.Fragment>
+            
+            <table  className="fon">
+            
+            <tr>
+            <th>({parseInt(this.props.name)})</th>
+            <td>
+             
+             {this.state.first}&nbsp;X&nbsp;{this.state.second}=
+            </td>
+            <th>({parseInt(this.props.name)+1})</th>
+            <td> 
+              
+            {this.state.third}&nbsp;X&nbsp;{this.state.f}=
+            </td>  
+            </tr>    
+            </table>
+            
+            </React.Fragment>
+            );
+          }
+        }
+      </script>
+      <script type="text/babel">
+        ReactDOM.render(
+        <div>
+        <div className="nam">
+          <h4>LJS</h4>
+        <h2>날짜:</h2><h2>학년:</h2> <h2>이름:</h2>
+        
+        
+        </div>
+       
+        <GuGuDan name="1"/>
+        <GuGuDan name="3"/>
+        <GuGuDan name="5"/>
+        <GuGuDan name="7"/>
+        <GuGuDan name="9"/>
+        <GuGuDan name="11"/>
+        <GuGuDan name="13"/>
+        <GuGuDan name="15"/>
+        <GuGuDan name="17"/>
+        <GuGuDan name="19"/>
+        
+        
+
+
+        </div>,document.querySelector('#root'));
+      </script>
+    </div>
+   </body>
+</html>
