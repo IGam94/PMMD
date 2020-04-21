@@ -13,9 +13,7 @@
         font-size: 25pt;
         width: 300px;
       }
-      h4{
-        text-align: right;
-      }
+
       
     </style>
   </head>
@@ -26,10 +24,10 @@
           constructor(props){
             super(props);
             this.state={
-              first: Math.ceil(Math.random()*8)+1,
-              second: Math.ceil(Math.random()*8)+1,
-              third:Math.ceil(Math.random()*8)+1,
-              f:Math.ceil(Math.random()*8)+1,
+              first: String(Math.ceil(Math.random()*9))+String(Math.ceil(Math.random()*9)),
+              second: String(Math.ceil(Math.random()*9))+String(Math.ceil(Math.random()*9)),
+              third:String(Math.ceil(Math.random()*9))+String(Math.ceil(Math.random()*9)),
+              f:String(Math.ceil(Math.random()*9))+String(Math.ceil(Math.random()*9)),
               
               count:'',
 
@@ -57,12 +55,12 @@
             <th>({parseInt(this.props.name)})</th>
             <td>
              
-             {this.state.first}&nbsp;X&nbsp;{this.state.second}=
+             {this.state.first}&nbsp;+&nbsp;{this.state.second}=
             </td>
             <th>({parseInt(this.props.name)+1})</th>
             <td> 
               
-            {this.state.third}&nbsp;X&nbsp;{this.state.f}=
+            {this.state.third}&nbsp;+&nbsp;{this.state.f}=
             </td>  
             </tr>    
             </table>
@@ -76,7 +74,6 @@
         ReactDOM.render(
         <div>
         <div className="nam">
-          <h4>LJS</h4>
         <h2>날짜:</h2><h2>학년:</h2> <h2>이름:</h2>
         
         
@@ -93,7 +90,7 @@
         <GuGuDan name="17"/>
         <GuGuDan name="19"/>
         
-        
+        <h3></h3>
 
 
         </div>,document.querySelector('#root'));

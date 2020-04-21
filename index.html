@@ -1,100 +1,18 @@
 <html>
-  <head>
-    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    <style>
-      th{
-        height: 70px;
-        width: 50px;
-        text-align: center;
-      }
-      td { 
-        font-size: 25pt;
-        width: 300px;
-      }
-
-      
-    </style>
-  </head>
   <body>
-    <div id="root"></div>
-      <script type="text/babel">
-        class GuGuDan extends React.Component{
-          constructor(props){
-            super(props);
-            this.state={
-              first: Math.ceil(Math.random()*9),
-              second: Math.ceil(Math.random()*9),
-              third:Math.ceil(Math.random()*9),
-              f:Math.ceil(Math.random()*9),
-              
-              count:'',
+    <title>수학문제 생성사이트</title>
+    <h1>성심중앙지역아동센터 수학문제 인쇄용 by LJS</h1>
 
-            };
-            
-          }
-          onSubmit = (e)=>{
-                e.preventDefault();
-                this.setState({
-                  first:Math.ceil(Math.random()*100),
-                  second:Math.ceil(Math.random()*100),
-                  count:'',
-                  value:'',
-                });
-          };
-          onChange = (e)=> {this.setState({value: e.target.value})};
-          
-          render(){
-            return (
-            <React.Fragment>
-            
-            <table  className="fon">
-            
-            <tr>
-            <th>({parseInt(this.props.name)})</th>
-            <td>
-             
-             {this.state.first}&nbsp;X&nbsp;{this.state.second}=
-            </td>
-            <th>({parseInt(this.props.name)+1})</th>
-            <td> 
-              
-            {this.state.third}&nbsp;X&nbsp;{this.state.f}=
-            </td>  
-            </tr>    
-            </table>
-            
-            </React.Fragment>
-            );
-          }
-        }
-      </script>
-      <script type="text/babel">
-        ReactDOM.render(
-        <div>
-        <div className="nam">
-        <h2>날짜:</h2><h2>학년:</h2> <h2>이름:</h2>
-        
-        
-        </div>
-       
-        <GuGuDan name="1"/>
-        <GuGuDan name="3"/>
-        <GuGuDan name="5"/>
-        <GuGuDan name="7"/>
-        <GuGuDan name="9"/>
-        <GuGuDan name="11"/>
-        <GuGuDan name="13"/>
-        <GuGuDan name="15"/>
-        <GuGuDan name="17"/>
-        <GuGuDan name="19"/>
-        
-        <h3></h3>
+    <h1>한자릿수 덧셈</h1>
+    <a href="https://igam94.github.io/PMMD/plus">https://igam94.github.io/PMMD/plus</a>
+    <h1>10의자리 + 10의자리 덧셈</h1>
+    <a href="https://igam94.github.io/PMMD/2plus">https://igam94.github.io/PMMD/2plus</a>
+    <h1>두자릿수 + 두자릿수 덧셈</h1>
+    <a href="https://igam94.github.io/PMMD/3plus">https://igam94.github.io/PMMD/3plus</a>
+    <h1>한자릿수 곱셉</h1>
+    <a href="https://igam94.github.io/PMMD/multiply">https://igam94.github.io/PMMD/multiply</a>
+    <h1>두자릿수 x 한자릿수 곱셉</h1>
+    <a href="https://igam94.github.io/PMMD/2multiply">https://igam94.github.io/PMMD/2multiply</a>
 
-
-        </div>,document.querySelector('#root'));
-      </script>
-    </div>
-   </body>
+  </body>
 </html>

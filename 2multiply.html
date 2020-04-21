@@ -26,9 +26,9 @@
           constructor(props){
             super(props);
             this.state={
-              first: Math.ceil(Math.random()*8)+1,
+              first: String(Math.ceil(Math.random()*9))+String(Math.ceil(Math.random()*9)),
               second: Math.ceil(Math.random()*8)+1,
-              third:Math.ceil(Math.random()*8)+1,
+              third:String(Math.ceil(Math.random()*9))+String(Math.ceil(Math.random()*9)),
               f:Math.ceil(Math.random()*8)+1,
               
               count:'',
