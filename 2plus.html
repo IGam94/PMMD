@@ -29,22 +29,12 @@
               third:Math.ceil(Math.random()*9)+10,
               f:Math.ceil(Math.random()*9)+10,
               
-              count:'',
+        
 
             };
             
           }
-          onSubmit = (e)=>{
-                e.preventDefault();
-                this.setState({
-                  first:Math.ceil(Math.random()*100),
-                  second:Math.ceil(Math.random()*100),
-                  count:'',
-                  value:'',
-                });
-          };
-          onChange = (e)=> {this.setState({value: e.target.value})};
-          
+        
           render(){
             return (
             <React.Fragment>
